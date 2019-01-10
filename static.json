@@ -1,0 +1,14 @@
+{
+  "root": "build/",
+  "routes": {
+    "/**": "index.html"
+  },
+  "proxies": {
+    "/api/": {
+      "origin": "${API_URL}/api"
+    },
+	 "/auth/": {
+      "origin": "${API_URL}/auth"
+    }
+  }
+}
