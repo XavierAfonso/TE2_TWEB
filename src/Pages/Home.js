@@ -53,7 +53,7 @@ class Home extends React.Component {
     this.getPopularMovie().then(val => {
 
       this.setState({ data: val.data.results });
-      console.log(this.state.data);
+      //console.log(this.state.data);
 
     }).catch(err => console.log(err));
 
@@ -62,7 +62,6 @@ class Home extends React.Component {
   handleDrawerToggle = () => {
     this.setState(state => ({ mobileOpen: !state.mobileOpen }));
   };
-
 
   static contextTypes = {
     router: PropTypes.object
@@ -82,6 +81,8 @@ class Home extends React.Component {
 
   //Add or remove movie
   liked = (child) => {
+
+    // Je n'ai pas eu le temps...
     console.log(child);
   }
 
@@ -89,7 +90,7 @@ class Home extends React.Component {
 
     return (
       <AuthContext>
-        {({ }) => {
+        {() => {
 
           const { classes } = this.props;
 

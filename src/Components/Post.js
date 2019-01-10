@@ -12,7 +12,7 @@ import red from '@material-ui/core/colors/red';
 
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import axios from 'axios';
+// import axios from 'axios';
 
 
 const styles = theme => ({
@@ -145,8 +145,8 @@ class RecipeReviewCard extends React.Component {
   render() {
 
     const { classes } = this.props;
-    const { anchorEl } = this.state;
-    const open = Boolean(anchorEl);
+    //const { anchorEl } = this.state;
+    //const open = Boolean(anchorEl);
 
     const posterUrl = `https://image.tmdb.org/t/p/w500/${this.state.element.poster_path}`;
 
@@ -209,6 +209,9 @@ class RecipeReviewCard extends React.Component {
             
           <p>
             Release date : {this.state.element.release_date}
+          </p>
+          <p>
+           Descriptions: {this.state.element.overview}
           </p>
 
           </CardContent>

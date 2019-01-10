@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { MuiThemeProvider, withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Hidden from '@material-ui/core/Hidden';
-import Navigator from './Navigator';
 import Header from './Header';
 import Grid from '@material-ui/core/Grid';
 import { AuthContext } from '../Utils/AuthProvider';
@@ -13,7 +12,6 @@ import axios from 'axios';
 const { theme } = require('../Utils/theme');
 
 const drawerWidthFull = 0;
-const drawerWidthMobile = 0;
 
 const styles = theme => ({
   root: {
@@ -55,7 +53,7 @@ class Home extends React.Component {
     this.getPopularMovie().then(val => {
 
       this.setState({ data: val.data.results });
-      console.log(this.state.data);
+      //console.log(this.state.data);
 
     }).catch(err => console.log(err));
 
@@ -86,11 +84,14 @@ class Home extends React.Component {
 
     return (
       <AuthContext>
-        {({ }) => {
+        {() => {
 
           const { classes } = this.props;
 
-          const renderData = this.state.data.map((element, i) => {
+          // We only keep en original movie
+          let filtred = this.state.data.filter(x => x.original_language ==="en");
+
+          const renderData = filtred.map((element, i) => {
 
             return (
 
