@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import LoginPage from './Pages/Login';
-import RegisterPage from './Pages/Register';
+//import RegisterPage from './Pages/Register';
 import { AuthContext } from './Utils/AuthProvider';
 import HomePage from './Pages/Home';
 import UpcomingPage from './Pages/Upcoming';

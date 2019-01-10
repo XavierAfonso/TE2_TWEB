@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { MuiThemeProvider, withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Hidden from '@material-ui/core/Hidden';
-import Navigator from './Navigator';
 import Header from './Header';
 import Grid from '@material-ui/core/Grid';
 import { AuthContext } from '../Utils/AuthProvider';
@@ -13,7 +12,6 @@ import axios from 'axios';
 const { theme } = require('../Utils/theme');
 
 const drawerWidthFull = 0;
-const drawerWidthMobile = 0;
 
 const styles = theme => ({
   root: {
@@ -82,6 +80,11 @@ class Home extends React.Component {
     
   }
 
+  //Add or remove movie
+  liked = (child) => {
+    console.log(child);
+  }
+
   render() {
 
     return (
@@ -95,7 +98,7 @@ class Home extends React.Component {
             return (
 
               <Grid key={i} style={{ backgroundColor: 'transparent' }} item xs={6} md={3}>
-                <Post element={element} key={i} />
+                <Post liked = {this.liked} element={element} key={i} />
               </Grid>
             )
           });
