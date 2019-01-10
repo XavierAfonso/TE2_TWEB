@@ -4,11 +4,8 @@
     "/**": "index.html"
   },
   "proxies": {
-    "/api/": {
-      "origin": "${API_URL}/api"
-    },
-	 "/auth/": {
-      "origin": "${API_URL}/auth"
+    "/3": {
+      "origin": "https://apitwebte2.herokuapp.com/3"
     }
   }
 }
